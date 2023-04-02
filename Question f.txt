@@ -1,0 +1,9 @@
+The dot product and cross product are two fundamental operations used in vector mathematics, often used in computer graphics and other fields of engineering and physics.
+
+The dot product, also known as the scalar product, is a mathematical operation that takes two vectors and produces a scalar quantity. It is defined as the product of the magnitudes of the two vectors and the cosine of the angle between them. In other words, it measures how much the two vectors point in the same direction. The dot product is used in a wide range of applications, such as computing the angle between two vectors, projecting one vector onto another, and determining whether two vectors are perpendicular.
+
+The cross product, also known as the vector product, is a mathematical operation that takes two vectors and produces a third vector perpendicular to both of them. It is defined as the product of the magnitudes of the two vectors and the sine of the angle between them, where the direction of the resulting vector is determined by the right-hand rule. The cross product is used in computer graphics to compute the surface normal of a polygon, which is essential for shading and lighting calculations. It is also used in physics to calculate torque, angular momentum, and magnetic fields.
+
+In summary, the dot product is used to determine how much two vectors point in the same direction, while the cross product is used to determine a vector that is perpendicular to both of them. In computer graphics, the dot product is used for lighting calculations and projection, while the cross product is used for calculating surface normals and determining the direction of rotations.
+
+Reference Link - https://www.geeksforgeeks.org/dot-and-cross-products-on-vectors/

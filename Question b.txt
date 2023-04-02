@@ -1,0 +1,90 @@
+time-complexcity-O(n),space-complexcity-O(1);
+
+This is the  Optimized code
+      
+#include <bits/stdc++.h>
+using namespace std;
+
+
+//This class is for creating a node inside memory
+class node {
+    public:
+	int data;
+	node* next;
+	node(int val)
+	{
+		data = val;
+		next = NULL;
+	}
+};
+
+class llist {
+    public:
+	node* head;
+	llist() { head = NULL; }
+
+      //add node at the beginning
+	void insertAtBegin(int val)
+	{
+		node* newNode = new node(val);
+		newNode->next = head;
+		head = newNode;
+	}
+
+// This fun will print nth node from end
+	void nthFromEnd(int n)
+	{
+		node* main = head;
+		node* ref = head;
+
+		if (head == NULL) {
+			cout << "List is empty" << endl;
+			return;
+		}
+
+		for (int i = 1; i < n; i++) {
+			ref = ref->next;
+			if (ref == NULL) {
+				cout << n
+					<< " is greater than no. of nodes in "
+						"the list"
+					<< endl;
+				return;
+			}
+		}
+
+
+		while (ref != NULL && ref->next != NULL) {
+			ref = ref->next;
+			main = main->next;
+		}
+		cout << "Node no. " << n
+			<< " from end is: " << main->data << endl;
+	}
+// To display all node
+	void displaylist()
+	{
+		node* temp = head;
+		while (temp != NULL) {
+			cout << temp->data << "->";
+			temp = temp->next;
+		}
+		cout << "NULL" << endl;
+	}
+};
+
+int main()
+{
+	llist ll;
+
+	ll.insertAtBegin(20);
+	ll.insertAtBegin(4);
+	ll.insertAtBegin(15);
+	ll.insertAtBegin(35);
+
+	ll.displaylist();
+
+	ll.nthFromEnd(4);
+
+	return 0;
+}

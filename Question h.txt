@@ -1,0 +1,8 @@
+There could be some general cases which may result in such behavior,
+
+Random Variable : The application may be using some random variable, like random number generator or a specific time of the day or a user input etc which may be causing this.
+Uninitialized Variable : May be there is some uninitialized variable, which takes an arbitrary value each time and those values are causing such drastic behavior.
+Memory Leak : The program may have run out of memory, maybe heap overflow or something.
+External Dependencies : The program may depend on some other application which is causing this.
+Other process on machine : Maybe there are some other processes, running on machine causing it.
+We can approach this problem by elimination, like close all other applications in the system or use some runtime tools to dig deeper when the problem occurs.

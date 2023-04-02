@@ -1,0 +1,92 @@
+time complexcity-O(1) space-complexcity-O(n)
+    This is the optimized code.
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+    // This will store the min element 
+    int minEle;
+
+    stack<int> s;   
+    public:
+
+//this will return min element .
+    int getMin(){
+           
+           if(s.empty())
+           return -1;
+           return minEle;
+       }
+       
+// pop element from stack
+       int pop(){
+           
+           int p=0;
+           if(s.size()==0)
+           return -1;
+           int a=s.top();
+           s.pop();
+           
+           if(a<minEle)
+           {
+               minEle=2*minEle-a;
+             p= (a+minEle)/2;
+            
+           }
+           else
+           return a;
+           
+           return p ;
+       }
+
+       //add element in stack
+       void push(int x){
+           
+           if(s.empty())
+           {
+           s.push(x);
+           minEle=x;
+           }
+           else if(x<minEle)
+           {
+               s.push((2*x-minEle));
+               minEle=x;
+           }
+           else 
+           s.push(x);
+       }
+};
+
+int main()
+ {
+    long long t;
+
+    cin>>t;
+    while(t--)
+    {
+        int q;
+        cin>>q;
+        Solution ob;
+        while(q--){
+           int qt;
+           cin>>qt;
+           if(qt==1)
+           {
+              int att;
+              cin>>att;
+              ob.push(att);
+           }
+           else if(qt==2)
+           {
+              cout<<ob.pop()<<" ";
+           }
+           else if(qt==3)
+           {
+              cout<<ob.getMin()<<" ";
+           }
+       }
+       cout<<endl;
+    }
+    return 0;
+}
+
