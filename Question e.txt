@@ -1,0 +1,35 @@
+To find the most optimum way to tender change using the least number of coins, you can use a greedy algorithm approach. This approach involves selecting the largest denomination coin possible until the desired change is reached.
+
+Here's how you can implement this algorithm:
+
+Sort the coin denominations in descending order.
+Initialize an empty list to store the coins used for change.
+Subtract the purchase amount from the payment amount to get the change amount.
+While the change amount is greater than 0, do the following:
+Iterate through the sorted coin denominations.
+If the current denomination is less than or equal to the remaining change amount, subtract the denomination from the change amount and add the denomination to the list of coins used for change.
+Return the list of coins used for change.
+Let's say you have the following coin denominations: 25, 10, 5, and 1. If a customer purchases something for $37 and pays with a $50 bill, the change due is $13. Using the greedy algorithm approach, you would follow these steps:
+
+Sort the coin denominations in descending order: [25, 10, 5, 1]
+Initialize an empty list to store the coins used for change: []
+Subtract the purchase amount from the payment amount to get the change amount: $50 - $37 = $13
+While the change amount is greater than 0, do the following:
+Iterate through the sorted coin denominations: 25, 10, 5, 1
+If the current denomination is less than or equal to the remaining change amount, subtract the denomination from the change amount and add the denomination to the list of coins used for change.
+$13 - 10 = $3, add 10 to the list of coins used for change: [10]
+$3 - 1 = $2, add 1 to the list of coins used for change: [10, 1]
+$2 - 1 = $1, add 1 to the list of coins used for change: [10, 1, 1]
+$1 - 1 = $0, add 1 to the list of coins used for change: [10, 1, 1, 1]
+Return the list of coins used for change: [10, 1, 1, 1]
+In this scenario, the optimum way to tender the exact change to the customer using the least number of coins was to use one 10 cent coin, and three 1 cent coins.
+
+Explain what is a greedy algorithm and how dynamic programming helps in this case?
+
+A greedy algorithm is an approach to problem-solving that makes locally optimal choices at each step, with the hope of finding a global optimum solution. In other words, it makes the best possible decision at each step without considering the long-term consequences. Greedy algorithms are often used to solve optimization problems, such as finding the shortest path between two points or the most efficient way to allocate resources.
+
+When it comes to coin problems, a greedy algorithm is often used to determine the minimum number of coins needed to make change for a given amount. The basic idea is to always use the largest coin denomination possible, until the remaining change can no longer be made with that denomination. Then, you move on to the next largest denomination and repeat the process until the desired change is reached. While this approach is not guaranteed to find the globally optimal solution, it often works well in practice and can be very efficient.
+
+However, there are cases where a greedy algorithm may not work optimally. For example, suppose the coin denominations are 1, 5, and 10, and you need to make change for 15 cents. Using the greedy algorithm, you would use one 10-cent coin and one 5-cent coin, for a total of two coins. But the optimal solution is actually three 5-cent coins. In cases like this, a dynamic programming approach can be used to find the optimal solution.
+
+Dynamic programming is a technique for solving complex problems by breaking them down into smaller, more manageable subproblems. It involves storing the solutions to subproblems in a table, so that they can be easily accessed and reused when needed. In the case of coin problems, dynamic programming can be used to find the minimum number of coins needed to make change for a given amount, by considering all possible combinations of coin denominations. This approach is guaranteed to find the globally optimal solution, but it can be slower and more memory-intensive than a greedy algorithm for small problem sizes. However, for larger problem sizes, dynamic programming can be much more efficient than a naive greedy approach.
